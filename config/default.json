@@ -1,0 +1,46 @@
+{
+  "scenario_name": "Default Scenario",
+  "scenario_id": "SCN-001",
+  "mode": "training",
+  "difficulty": "medium",
+  "simulation_speed": 1.0,
+  "max_duration_hours": 4.0,
+  "time_step_seconds": 1.0,
+  "geographic_area": {
+    "name": "Default AO",
+    "center_lat": 4.6097,
+    "center_lon": -74.0817,
+    "radius_km": 500,
+    "min_altitude_ft": 0,
+    "max_altitude_ft": 60000
+  },
+  "weather": {
+    "visibility_km": 10.0,
+    "cloud_ceiling_ft": 25000,
+    "wind_speed_kts": 10.0,
+    "wind_direction_deg": 270.0
+  },
+  "space_weather": {
+    "kp_index": 2.0,
+    "solar_wind_speed": 400.0,
+    "dst_index": -10.0
+  },
+  "rules_of_engagement": {
+    "weapons_free": false,
+    "weapons_tight": true,
+    "weapons_hold": false,
+    "identification_required": true
+  },
+  "modules": {
+    "enable_cyber": true,
+    "enable_space": true,
+    "enable_ctf": false
+  },
+  "database": {
+    "url": "sqlite:///gavilan.db"
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000
+  }
+}

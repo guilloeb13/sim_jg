@@ -1,0 +1,36 @@
+# GAVILAN - Dependencias
+# ======================
+
+# Framework Web
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+pydantic>=2.0.0
+
+# Base de datos
+sqlalchemy>=2.0.0
+alembic>=1.11.0
+
+# Computación numérica
+numpy>=1.24.0
+
+# HTTP Client (para APIs externas como NASA DONKI)
+httpx>=0.24.0
+requests>=2.31.0
+
+# Utilidades
+python-dateutil>=2.8.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Logging y monitoreo
+structlog>=23.1.0
+
+# Opcional: Visualización
+# matplotlib>=3.7.0
+# plotly>=5.15.0
+
+# Opcional: PostgreSQL
+# psycopg2-binary>=2.9.0

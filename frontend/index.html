@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAVILAN Multiplayer - Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .consoles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .console-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .console-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .console-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .console-card p {
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 2rem;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .features h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .features ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: -20px;
+            color: #4CAF50;
+        }
+
+        .api-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .api-link a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .api-link a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛩️ GAVILAN Multiplayer</h1>
+            <p class="subtitle">Simulador de Guerra Aérea Multinivel y Multijugador</p>
+        </header>
+
+        <div class="consoles">
+            <div class="console-card" onclick="window.location.href='/frontend/director/index.html'">
+                <h2><span class="icon">👁️</span> Director</h2>
+                <p>Control total de la simulación. Inyectar eventos, pausar, modificar condiciones. Visibilidad completa de ambos bandos.</p>
+            </div>
+
+            <div class="console-card" onclick="window.location.href='/frontend/strategic/index.html'">
+                <h2><span class="icon">🎖️</span> Estratégico</h2>
+                <p>Nivel de Alto Mando. Definir ROE, objetivos estratégicos, aprobar ATOs, asignar recursos entre sectores.</p>
+            </div>
+
+            <div class="console-card" onclick="window.location.href='/frontend/operational/index.html'">
+                <h2><span class="icon">📋</span> Operacional</h2>
+                <p>Centro de Operaciones Aéreas (AOC). Crear ATOs, planificar misiones, asignar aeronaves, ordenar SCRAMBLE.</p>
+            </div>
+
+            <div class="console-card" onclick="window.location.href='/frontend/tactical/index.html'">
+                <h2><span class="icon">✈️</span> Táctico</h2>
+                <p>Control de Piloto/Controlador. Control directo de aeronaves, decisiones de combate, engagement táctico.</p>
+            </div>
+
+            <div class="console-card" onclick="window.location.href='/frontend/admin/index.html'">
+                <h2><span class="icon">⚙️</span> Administración</h2>
+                <p>Gestión del sistema. Usuarios, escenarios, perfiles de IA, configuración de servidores.</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>Características Implementadas</h3>
+            <ul>
+                <li>Autenticación y autorización con JWT</li>
+                <li>WebSocket para comunicación en tiempo real</li>
+                <li>API REST completa para administración</li>
+                <li>Fog of War con visibilidad limitada por bando</li>
+                <li>IA avanzada para enemigos (dificultad escalable)</li>
+                <li>IA para insurgentes (tácticas asimétricas)</li>
+                <li>Simulador de desastres naturales</li>
+                <li>3 tipos de juegos (Guerra Externa, Conflicto Interno, Desastres)</li>
+                <li>4 niveles de comando jerárquicos</li>
+                <li>Sesiones multijugador concurrentes</li>
+            </ul>
+        </div>
+
+        <div class="api-link">
+            <a href="/docs" target="_blank">📖 API Documentation</a>
+            <a href="/health" target="_blank">💚 Health Check</a>
+        </div>
+    </div>
+
+    <script>
+        console.log('%c🛩️ GAVILAN Multiplayer', 'font-size: 20px; font-weight: bold; color: #4CAF50');
+        console.log('WebSocket endpoint: ws://localhost:8000/ws');
+        console.log('API REST: http://localhost:8000/api');
+        console.log('Documentación: http://localhost:8000/docs');
+    </script>
+</body>
+</html>
